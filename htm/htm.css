@@ -1,0 +1,87 @@
+/*주의!: style element안에 주석 달때 '//'는 허용안됨.*/
+@import url('../share/layout_n_color.css');
+
+div {font-size: large;}
+
+
+summary{ display: inline;}
+/*summary { color: blue; text-decoration: underline;}*/
+/*.dtSummary { color: blue; } /*text-decoration: underline;*/
+summary u { color: blue; /*text-decoration: underline;*/}
+
+details             { margin: 10px 0 0 25px } /* Top, Right, Bottom, Left */
+details.detailL2    { margin: 10px 0 0 50px }
+details.detailL3    { margin: 10px 0 0 100px }
+details.minIndt       {margin-left: 5px}
+/* details > div       { background-color: lightyellow; margin-left: 24px;} */
+/*details div { text-indent: 25px;}        */
+/* 'list-style-type': none, disk, circle, square, decimal, upper-roman, lower-alpha */
+details > summary { list-style-type: none; }
+/* details > summary.heading { list-style-type: none; } */
+details > summary.decimal { list-style-type: decimal; }
+details > summary.circle { list-style-type: circle; }
+details > summary.square { list-style-type: square;}
+details > summary.lAlpha { list-style-type: lower-alpha;}
+
+/*details:link { text-decoration: none; }*/
+/*details summary:visited { text-decoration: none; }*/
+/*section div details summary{ background-color: lightgreen; }*/
+/* body > div > details > summary > u { font-weight: bold;} */
+details summary:hover { 
+    color: indigo; 
+    background-color: gold;
+    text-decoration: underline;
+}
+
+details[open] > summary > u { background-color: lightgreen;}
+body > div > details > summary > u { color: brown; font-size: 17pt; /*font-weight: bold;*/}
+
+table, th, td { 
+    border: 1px solid black;
+    border-collapse: collapse; /* for single line */
+    padding: 5px 10px 0 10px;
+    color: black;
+}
+
+table {
+    margin: 0 10px 0 50px; /* Top, Right, Bottom, Left */    
+}
+
+/* for the nested table */
+td table {
+    margin: 0 10px 0 20px; /* Top, Right, Bottom, Left */
+    text-align: center;
+}
+
+tr:nth-child(even) { background-color: lightyellow; }
+tr:nth-child(odd) { background-color: whitesmoke; }
+
+th { background-color: lightgray; }
+td table th { background-color: lightblue; } /* for nested table's header */
+td:nth-child(1) { width: 30%;}
+
+/* odd td under the table of which class is not 'withId' */
+/* table:not([class="withId"]) td:nth-child(odd) { text-align: center; vertical-align: top; padding-top: 5px;} */
+/*table[class='withId'] td:nth-child(odd) { line-height:0.8;}*/ /* for the 4.2 in the table. but commented out since the issue resolved after removing the pre tag which was enclosing the table in question. */
+/*table[class='withId'] details td:nth-child(odd) { line-height:1;}*/ /* for the 4.2 in the nested table. but commented out since the issue resolved after removing the pre tag which was enclosing the table in question. */
+/* table[class='withId'] td:nth-child(even) { text-align: center;}         */
+table.withId td:nth-child(3) { padding-left: 15px;} /* I could get it worked after I add a class to all nested tables as 'tNested'. */
+
+/*#mTbl5 td:nth-child(3) { padding-left: 15px;}*/
+
+i > span::before, section > div > span::before { 
+    content: "\a\2003\2003"; /* '\a' is for line break. '\2003' is 0x2003 and for the general punctuation '&emsp;' */
+    line-height: 0%;
+    white-space: pre;
+    clear: right;
+}
+
+
+span[class^="indtL"] {
+    /*line-height: 0%;*/
+    white-space: pre;
+    clear: right;
+}
+
+pre {margin: 0; padding:0; line-height: normal; white-space: pre-wrap; /*tab-size: 2;*/}   /* pre-wrap for wrapping overflow text. */
+div > pre { margin-left: 20px;}

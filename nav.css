@@ -1,0 +1,129 @@
+/*주의!: style element안에 주석 달때 '//'는 허용안됨. org: TrSigSys.css. lastUpdate: Jul. 20, 2023*/
+@import url("share/layout_n_color.css");
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:1px;	 
+}
+nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    /* height:1600px; */
+    height:1100px;
+    width:130px;
+    float:left;
+    padding:5px;	      
+} 
+nav a.sel       { background:#9ACD32; }
+section {
+    /*width:1200px;*/
+    width:1600px;
+    /* min-width: 1600px; */
+    float:left;
+    padding: 10px 0 0 10px;
+}
+footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;	 	 
+}
+
+body > div { margin-left: 24px }
+
+/* a.menu:active { color: mediumblue; }*/
+a.menu:link { text-decoration: none; }
+a.menu:visited { text-decoration: none; }
+a.menu:hover { 
+    color: indigo; 
+    background-color: gold;
+    text-decoration: underline;
+}
+
+
+summary {font-size: 24px;}
+/*summary { color: blue; text-decoration: underline;}*/
+/*.dtSummary { color: blue; } /*text-decoration: underline;*/
+summary u { color: blue; /*text-decoration: underline;*/}
+
+div { font-size: 24px;}
+div.instruction { display: none; font-size: large;}       /* set to 'block' instead of 'none' to get the instruction tag displayed */
+/*div.fbblgr > div.instruction:hover { display: block;}*/
+
+details             { margin: 10px 0 0 24px; } /* Top, Right, Bottom, Left */
+details.detailL2    { margin: 10px 0 0 50px }
+details.detailL3    { margin: 10px 0 0 100px }
+details.detailL4    { margin-left: 25em; }
+details.minIndt      {margin-left: 5px}
+/*section div { text-indent: 24px;}
+section div { padding-left: 24px;}*/
+/* details > div       { margin-left: 24px } */
+/*details div { text-indent: 25px;}        */
+/* 'list-style-type': none, disk, circle, square, decimal, upper-roman, lower-alpha */
+details > summary { list-style-type: none; }
+/* details > summary.heading { list-style-type: none; } */
+details > summary.decimal { list-style-type: decimal; }
+details > summary.circle { list-style-type: circle; }
+details > summary.square { list-style-type: square;}
+details > summary.lAlpha { list-style-type: lower-alpha;}
+/*details>summary.minus::before { content: '- ';}*/
+
+/*details:link { text-decoration: none; }*/
+/*details summary:visited { text-decoration: none; }*/
+
+section div p { padding-left: 25px;}
+/*section div details summary{ background-color: lightgreen; }*/
+section div details[open] > summary > u { background-color: lightgreen;}
+/*body div details[open] > summary { background-color: lightgreen;}*/
+body div details[open] > summary > u { text-decoration: none; background-color: lightblue; font-weight: bold}
+/*body div details[open] > summary.circle > u { background-color: lightgreen;}
+body div details[open] > summary.square > u { background-color: lightgreen;}*/
+body div details[open] > div { background-color:#fafad2;}
+
+details summary:hover { 
+    color: indigo; 
+    background-color: gold;
+    text-decoration: underline;
+}
+
+details summary:hover > i.fbk { display: inline;}
+
+table, th, td { 
+    border: 1px solid black;
+    border-collapse: collapse; /* for single line */
+    padding: 0 10px 0 10px;
+    color: black;
+}
+
+table {margin: 0 10px 0 50px;} /* Top, Right, Bottom, Left */
+
+/* for the nested table */
+td table {
+    margin: 0 10px 0 20px; /* Top, Right, Bottom, Left */
+    text-align: center;
+}
+
+
+tr:nth-child(even) { background-color: lightyellow; }
+
+th { background-color: lightgray; }
+td table th { background-color: lightblue; } /* for nested table's header */
+       
+/* odd td under the table of which class is not 'withId' */
+/*table:not([class="withId"]) td:nth-child(odd) { text-align: center; vertical-align: top; padding-top: 5px;}*/
+/*table[class='withId'] td:nth-child(odd) { line-height:0.8;}*/ /* for the 4.2 in the table. but commented out since the issue resolved after removing the pre tag which was enclosing the table in question. */
+/*table[class='withId'] details td:nth-child(odd) { line-height:1;}*/ /* for the 4.2 in the nested table. but commented out since the issue resolved after removing the pre tag which was enclosing the table in question. */
+/*table[class='withId'] td:nth-child(even) { text-align: center;}        
+table.withId td:nth-child(3) { padding-left: 15px;}*/ /* I could get it worked after I add a class to all nested tables as 'tNested'. */
+
+/*#mTbl5 td:nth-child(3) { padding-left: 15px;}*/
+table:td:nth-child(odd) { vertical-align: top; padding-top: 5px; }
+td { max-width: 800px;}
+
+/*td.date { padding: 2px 8px 2px 8px; }*/  /* top right bottom left */
+
+iframe { width: 1400px; height: 800px; border:none;}
+/* iframe { width: 1400px; border:none;} */

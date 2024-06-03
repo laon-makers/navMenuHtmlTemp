@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!--meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+<title>Navigation Menu Template</title>
+<link rel="stylesheet" type="text/css" href="nav.css"/>
+<link rel="stylesheet" type="text/css" href="share/event_htm.css"/>
+<script src="nav.js" type="text/javascript"></script>
+<script src="share/event_htm.js" type="text/javascript"></script>
+<script>
+  const AppVer = "0.1";
+  const AppLastUpdate = "Apr. 4, 2024";
+  let aIds = [ "nav_1", "nav_2", "nav_3", "nav_4", "nav_5", "nav_6", "nav_7", "nav_8", "nav_9", "nav_10", "misc", "help"];
+
+
+  dft_navWidth = '100px';
+  navList4iframe = ["nav_1_If", "nav_2_If"]; // this variable was defined in 'event_htm.js', but should be populated in a html file.
+  funcInHtmlToBePartOfEarlyOnLoad_nav.push(() => { window.addEventListener("message", iframeEventHandler);});
+  
+  funcInHtmlToBePartOfOnLoad_nav.push(setDefaultSourceValue4NavigationList);  // assign a function to get it invoked by 'window.onload' function.
+  
+
+</script>
+</head>
+<body>
+<noscript> 만약 이 메시지를 보신다면 javascript가 off된 상태이니 on시켜 줘야만 본 페이지의 내용을 설계된 대로 보실 수 있습니다.</noscript> <!-- 이 tag는 Javascript가 동작하지 않을 때 내용을 표시해 준다. -->
+<!--header><h3>Interview questions &amp; Answers</h3></header-->
+<nav width="100px;"><br>
+    <a href="#" onClick="navExpandOrCollapse(false)" id="navColpse"><img src="share/HideNav.png" style="display:inline-block" alt="&lt;&lt; Hide"></a>
+    <a href="#" onClick="navExpandOrCollapse(true)" id="navExpand" hidden><img src="share/ShowNav.png" style="display:inline-block" alt="=&gt;"></a><br><br>
+
+    <div class="navPage" >1.  <a href="#" id="m1"  class="menu" onClick="showElement(-1)"> <i><small>Nav_1</small></i></a><br><br></div>
+    <div class="navPage" >2.  <a href="#" id="m2"  class="menu" onClick="showElement(-2)"> <i><small>Nav_2</small></i></a><br><br></div>
+    <div class="navPage" >3.  <a href="#" id="m3"  class="menu" onClick="showElement(-3)"> <i><small>Nav_3</small></i></a><br><br></div>
+    <div class="navPage" >4.  <a href="#" id="m4"  class="menu" onClick="showElement(-4)"> <i><small>Nav_4</small></i></a><br><br></div>
+    <div class="navPage" >5.  <a href="#" id="m5"  class="menu" onClick="showElement(-5)"> <i><small>Nav_5</small></i></a><br><br></div>
+    <div class="navPage" >6.  <a href="#" id="m6"  class="menu" onClick="showElement(-6)"> <i><small>Nav_6</small></i></a><br><br><br></div>
+    <!-- <div class="navPage" >7.  <a href="#" id="m7"  class="menu" onClick="showElement(-7)"> <i><small><i class="fg">-</i></small></i></a><br><br></div>
+    <div class="navPage" >8.  <a href="#" id="m8"  class="menu" onClick="showElement(-8)"> <i><small><i class="fg">--</i></small></i></a><br><br></div>
+    <div class="navPage" >9.  <a href="#" id="m9"  class="menu" onClick="showElement(-9)"> <i><small><i class="fg">---</i></small></i></a><br><br></div>
+    <div class="navPage" >10. <a href="#" id="m10" class="menu" onClick="showElement(-10)"><i><small><i class="fg">----</i></small></i></a><br><br><br></div> -->
+    <div class="navPage" >11. <a href="#" id="m11" class="menu" onClick="showElement(-11)"><i><small>Misc</small></i></a><br><br></div>
+    <div class="navPage" >12. <a href="#" id="m12" class="menu" onClick="showElement(-12)"><i><small>Term</small></i></a><br><br></div>
+    <!-- <div class="navPage"><button id="openCloseAllTop" onclick="openOrCloseAll(true)">Open All Top</button><br>&ensp;&nbsp;<button id="openCloseAll" onclick="openOrCloseAll(false)">Open All</button></div> -->
+</nav>
+<section> 
+  <div id="highlight">
+      <b>Navigation Menu Template Highlight</b><br>
+      <div>
+        <i class="fg">Navigation Menu Template Highlight</i>
+      </div>
+      
+      <iframe id="nav_0_If" class="iframeAutoFit noIndt" src="_chart.htm" style="min-width: 1700px;"></iframe>
+      <br><br><br>
+  </div>
+
+
+  <div id="nav_1" hidden>
+    <ul class="nav_1_If hTapMenu">
+      <li class="active">
+        <a href="#" onclick="showTabContents(event, 'nav_1_If', './db_2024/dashb_2406.htm')"><small>TBD</small></a>
+      </li>
+      <li>
+        <a href="#" onclick="showTabContents(event, 'nav_1_If', './nav_template/dashb_yymm -Template.htm')"><small class="fg">Template</small></a>
+      </li>
+    </ul>
+    <b>1. <mark>Navigation Menu I</mark></b>&emsp;&emsp; <a href="./nav_template/dashb_yymm -Template.htm" target="_blank"><i class="fg fs_s">(open template on new page)</i></a><br>
+    <iframe id="nav_1_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+      
+  <div id="nav_2" hidden><br>
+    <ul class="nav_2_If hTapMenu">
+      <li class="active">
+        <a href="#" onclick="showTabContents(event, 'nav_2_If', './s_2024/s_Dev_2406.htm')"><small>TBD</small></a>
+      </li>
+      <li>
+        <a href="#" onclick="showTabContents(event, 'nav_2_If', './nav_template/s_DevMedEdYtb_yymm -Template.htm')"><small class="fg">Template</small></a>
+      </li>
+    </ul>
+    <b>2. <mark>Navigation Menu II</mark></b>&emsp;&emsp; <a href="nav_template/s_DevMedEdYtb_yymm -Template.htm" target="_blank"><i class="fg fs_s">(open template on new page)</i></a><br><br>
+    <iframe id="nav_2_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+  </div>
+
+  <div id="nav_3" hidden><br>    
+    <b>3. <mark>Navigation Menu III</mark></b><br><br>
+
+    <iframe id="nav_3_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+
+    <br><br><br>
+  </div>
+
+  <div id="nav_4" hidden><br>
+    <b>4. <mark>Navigation Menu IV</mark></b><br><br>
+    TBD1 <br>
+
+    <iframe id="nav_4_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+
+    <br><br><br>
+  </div>
+
+  <div id="nav_5" hidden>
+    <b>5. <mark>Navigation Menu V</mark></b><br>
+
+    <iframe id="nav_5_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+
+  </div></details><br>
+
+  </div>
+
+
+  <div id="nav_6" hidden><br>
+    <b>6. <mark>Navigation Menu VI</mark></b>&emsp; 
+    
+    <iframe id="nav_6_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+  <div id="nav_7" hidden><br>
+    <b>7. <mark>Navigation Menu VII</mark></b><br><br>
+    <iframe id="nav_7_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+  <div id="nav_8" hidden><br>
+    <b>8. <mark>Navigation Menu VIII</mark></b><br><br>
+
+    <iframe id="nav_8_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+  <div id="nav_9" hidden><br>
+    <b>9. <mark>Navigation Menu IX</mark></b><br><br>
+
+    <iframe id="nav_9_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+  <div id="nav_10" hidden><br>
+   <b>10. <mark>Navigation Menu X</mark></b><br><br>
+
+   <iframe id="nav_10_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+  <div id="misc" hidden><br>
+    <b>11. <mark>Miscellaneous</mark></b><br><br>
+
+    <iframe id="nav_misc_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+
+  <div id="help" hidden><br>
+    <b>12. <mark>Help</mark></b><br><br>
+
+    <iframe id="nav_help_If" class="iframeAutoFit noIndt" src="htm\tbd_na.htm" style="min-width: 1700px;"></iframe>
+    <br><br><br>
+  </div>
+  <br>
+  <hr>
+  <i style="color: grey; font-size: 8pt">Version: <span id="ftVer">&nbsp;</span>, &ensp; <span id="ftLstUdt">&nbsp;</span>&nbsp; SuntaekVil Artist&emsp; &copy; Copyright 2024, SuntaekVil, All Right Reserved</i><br/><br/>  
+  
+</section>
+</body>
+</html>

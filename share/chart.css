@@ -1,0 +1,50 @@
+body .prj_status {
+    /* display: inline-block; */
+    /* flex-direction: row; */
+    display: inline-block;
+    text-align: center;
+    /* display: flex;  */
+    justify-content: center; align-items: flex-end; flex-wrap: wrap; column-gap: 40px;
+}
+
+#bar-container, #prj-label {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    background-color: lightyellow;    
+}
+
+#prj-label { 
+    padding: 5px 0 5px 0;
+    background-color: lightgrey; }
+
+#bar-container, .bar {
+    height: 500px;
+}
+
+.bar {
+    width: 40px;
+    /* height: 200px; Adjust based on your data */
+    background-color: #3498db; /* Blue color for bars */
+}
+.prj_name {
+    width: 40px;
+    font-size: small;
+    /* flex-direction: row;
+    flex: 1; */
+}
+
+
+/* #Dev_h      { background-color: black;   color: yellow;  }
+#Med_h      { background-color: brown;  }
+#Edu_h      { background-color: red;    }
+#StdAi_h    { background-color: orange; }
+#LrnJs_h    { background-color: yellow; }
+#LrnEng_h    { background-color: green;  }
+#Ytb_h      { background-color: blue;   color: yellow; }
+#Job_h      { background-color: purple; color: yellow; }
+#Misc_h     { background-color: cyan;   }
+#MiscL_h    { background-color: magenta;} */
+
+#Dev_h, #Ytb_h, #Bs_h   { color: skyblue; font-weight: bold;}
+/* #Ytb_h, #Job_h  { color: yellow; } */

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--meta http-equiv="X-UA-Compatible" content="IE=edge"-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/png" href="../img/m_icon.png"> The tag on the left is to add image to the title. -->
+    <link rel="stylesheet" type="text/css" href="../status.css"/>
+    
+    <script src="../share/global.js" type="text/javascript"></script>
+    <script src="../share/event_htm.js" type="text/javascript"></script>
+    <!-- <script src="../share/chart.js"></script> -->
+    <script src="../status.js" type="text/javascript"></script>
+    <script>
+        yearMonIx = [24, 6];  //[yy, m] where 'yy', e.g., is '24' for 2024 and 'm' is one among 1 - 31.
+        const iframeElement = document.getElementsByClassName('iframeAutoFit');
+        funcRefIframe_status.push(autoFitIframe);
+
+        //funcInHtmlToBePartOfOnLoad_statusJs.push(initChart);  // assign a function to get it invoked by 'window.onload' function.
+        function addChartSubEvtHandler () {
+            window.addEventListener("message", chart_dashboard_eventHandler);
+        }
+        funcInHtmlToBePartOfOnLoad_statusJs.push(addChartSubEvtHandler);  // assign a function to get it invoked by 'window.onload' function.
+    </script>
+    <title>24.06 Dashboard</title>
+</head>
+<body>
+    <b><mark>2024년 6월</mark> <i class="fg">(6.2 ~)</i>:&emsp;&emsp; Dashboard</b> <i class="fgS">(단기 4357)</i></b>&emsp;&emsp; <a href="dashb_2406.htm" target="_blank"><i class="fg">Open on new tab</i></a>
+    &emsp;&emsp; <button onclick="validateTimeLog()">Validate Time Log</button> &emsp; <span id="dbgMsg" class="fR">&emsp;</span><br><br>
+    
+    <!--############################################################################################-->
+    <table class="minIndt">
+        <!-- <colgroup>
+            <col style="background-color: lightsalmon">
+            <col span="5" style="background-color: white">
+            <col style="background-color: #D6EEEE">
+        </colgroup> -->
+        <thead>
+            <tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+            </tr>
+        </thead>
+        <tbody class="status">
+            <tr>
+                <td><details><summary><span class="day">1-1 Sun</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">1-2 Mon</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">1-3 Tue</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">1-4 Wed</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">1-5 Thu</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">1-6 Fri</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">1-7 Sat</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+            </tr>
+            <tr>
+                <td><details><summary><span class="day">2-1 Sun</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">2-2 Mon</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">2-3 Tue</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">2-4 Wed</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">2-5 Thu</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">2-6 Fri</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">2-7 Sat</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+            </tr>
+            <tr>
+                <td><details><summary><span class="day">3-1 Sun</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">3-2 Mon</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">3-3 Tue</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">3-4 Wed</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">3-5 Thu</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">3-6 Fri</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">3-7 Sat</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+            </tr>
+            <tr>
+                <td><details><summary><span class="day">4-1 Sun</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">4-2 Mon</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">4-3 Tue</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">4-4 Wed</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">4-5 Thu</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">4-6 Fri</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">4-7 Sat</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+            </tr>
+            <tr>
+                <td><details><summary><span class="day">5-1 Sun</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">5-2 Mon</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">5-3 Tue</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">5-4 Wed</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">5-5 Thu</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">5-6 Fri</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">5-7 Sat</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+            </tr>
+            <tr id="tblLastRow">
+                <td><details><summary><span class="day">6-1 Sun</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">6-2 Mon</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">6-3 Tue</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">6-4 Wed</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">6-5 Thu</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">6-6 Fri</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+                <td><details><summary><span class="day">6-7 Sat</span>&ensp; <i class="fb">&nbsp;</i></summary><div>
+                    <!-- <div class="hour">
+                            <table>
+                                <tr><th>Type</th><th>From</th><th>To</th><th>Sub-total</th><th>Comments</th></tr>
+                                <tr class="Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Bs/Job/MiscL_h"><td>Dev/Med/Edu/StdAi/LrnJs/LrnEng/Ytb/Busn/Job/MiscLrn_0~5</td>
+                                    <td>0:00</td>
+                                    <td>0:00</td>
+                                    <td>0</td>
+                                    <td>&nbsp;</td></tr>
+                            </table>
+                        </div>
+                    </div></details> -->
+                </td>
+            </tr>
+        </tbody>
+    </table><br><br>
+
+    
+    <details><summary>* <u><i>Icon Images</i></u></summary><div class="indtL1">
+        <ul>
+            <li>발명:&emsp;&emsp;&emsp; <img class="devIco" alt="Dev"/></li>
+            <li>명상:&emsp;&emsp;&emsp; <img class="medIco" alt="Med"/></li>
+            <li>교육:&emsp;&emsp;&emsp; <img class="eduIco" alt="Edu"/>&nbsp; <i class="fg">Training/Tutoring</i></li>
+            <li>학습(AI): &ensp; <img class="aiIco" alt="StdAi"/></li>
+            <li>학습(js): &emsp; <img class="jsIco" alt="LrnJs"/>&nbsp; <i class="fg">javascript/html/css</i></li>
+            <li>학습(Eng): &ensp; <img class="engIco" alt="LrnEng"/>&nbsp; <i class="fg">English</i></li>
+            <li>Youtube: &emsp; <img class="ytbIco" alt="Youtube"/></li>
+            <li>창업:&emsp;&emsp;&emsp; <img class="bsIco" alt="Business"/>&nbsp; <i class="fg">Business</i></li>
+            <li>직업:&emsp;&emsp;&emsp; <img class="jobIco" alt="Jop"/></li>
+            <li>Misc (Lrn): &ensp; <img class="miscLIco" alt="miscLrn"/>&nbsp; <i class="fg">Miscellaneous (Learn)</i></li>
+            <li>Misc: &emsp;&emsp;&ensp; <img class="miscIco" alt="misc"/>&nbsp; <i class="fg">Miscellaneous</i></li>
+            <li>Failed: &emsp;&emsp; <img class="failIco" alt="failure"/>&nbsp; <i class="fg">plan or task failed.</i></li>
+            <!-- <li>발명:&emsp;&emsp; <img src="../img/Dev_icon.png" alt="Dev"/></li>
+            <li>명상:&emsp;&emsp; <img src="../img/md_icon.png" alt="Med"/></li>
+            <li>교육(AI): <img src="../img/Ai_icon.png" alt="EduAi"/></li>
+            <li>Youtube: <img src="../img/youtube_icon.png" alt=""/></li>
+            <li>Job: &emsp;&emsp;<img src="../img/job_icon.png" alt=""/></li>
+            <li>Misc: &emsp;&emsp; <img class="miscIco" alt="misc"/>&nbsp; <i class="fg">Miscellaneous</i></li>
+            <li>Misc (Dev): <img class="miscLIco" alt="miscDev"/>&nbsp; <i class="fg">Miscellaneous (Development)</i></li>
+            <li>Failed:&emsp; <img src="../img/fail_icon.png" alt="failure"/>&nbsp; <i class="fg">plan or task failed.</i></li> -->
+        </ul>
+    </div></details>
+    
+    
+    <!--############################################################################################-->
+<!-- 
+    <details><summary><u>2024.4., Template...</u></summary><div class="indtL">
+        <details><summary class="circle"><u>TBD</u></summary><div class="indtL"><br>
+
+            TBD
+            <br>
+        </div></details><br>
+    </div></details>
+  -->
+    <!--############################################################################################-->    
+    <br>
+    <hr>
+    <i class="fgXs indtL">Template ver.: 0.2.13, &emsp;Last update: 24.5.27, &emsp; Author: SuntaekVil Master GTCho </i>
+    <hr>
+</body>
+</html>

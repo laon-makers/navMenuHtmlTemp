@@ -1,0 +1,91 @@
+/* Version: 1.0.0,     Last update: May, 28, 2024 */
+
+/* .fcbr { color: cyan; background-color: red;}
+.fpbg { color: pink; background-color: green;}
+.fybb { color: yellow; background-color: blue;}
+.fbkblgr { color: black; background-color: lightgrey;}
+.fr { color: red;}
+.fg { color: green;}
+.fb { color: blue;}
+.fbk { color: black;}
+.fbr { color: brown;}
+.fgr { color: grey;}
+.flgr { color: lightgrey;}
+.fgrS { color: grey; font-size: small;}
+.fbby { color: blue; background-color: yellow;} */
+
+.bbl {background-color: black;}
+.bR {background-color: red;}
+.bG {background-color: green;}
+.bB {background-color: blue;}
+.bW {background-color: white;}
+
+.fR {color: red;}
+.fG {color: green;}     .fDg {color: darkgreen;}
+.fB {color: blue;}      .fBB {color: blue; font-weight: bold;}
+
+.fb {color: brown;}     .fbXs {color: brown; font-size: x-small;}
+.fc { color: cyan;}
+.fg {color: grey;}      .fgXs {color: grey; font-size: x-small;}       .fgS {color: grey; font-size: small;}       .flg {color: lightgrey;}
+.fp { color: pink;}
+.fsb{color: skyblue;}
+.fW {color: white;}     .fWbbl {color: white; background-color: black;}
+.fY {color: yellow;}    .fYbbl {color: yellow; background-color: black;}
+.td-lt {text-decoration: line-through;}
+
+.fs_s {font-size: small;}    .fs_sr {font-size: smaller;}   .fs_xs {font-size: x-small;}
+.fs_m {font-size: medium;}
+.fs_l {font-size: large;}    .fs_xl {font-size: x-large;}   .fs_xxl {font-size: xx-large;}
+
+span.r { background-color: red; color: cyan;}
+span.g { background-color: green; color: pink;}
+span.b { background-color: blue; color: yellow;}
+span.fgS { color: grey; font-size: small;}
+
+/*span[class^="indtL"] {*/
+    /*line-height: 0%;*/
+/*    white-space: pre;
+    clear: right;
+}*/
+
+/*i > span::before, section > div > span::before { 
+    content: "\a\2003\2003"; *//* '\a' is for line break. '\2003' is 0x2003 and for the general punctuation '&emsp;' */
+/*    line-height: 0%;
+    white-space: pre;
+    clear: right;
+}*/
+
+/* '\a' is for line break. '\2003' is 0x2003 and for the general punctuation '&emsp;' */
+/*span.indtL1::before { content: "\a\2003"; }*/ /* '\a' is for line break. '\2003' is 0x2003 and for the general punctuation '&emsp;' */
+/*span.indtL2::before { content: "\a\2003\2003"; } 
+span.indtL3::before { content: "\a\2003\2003\2003"; }
+span.indtL4::before { content: "\a\2003\2003\2003\2003"; }*/
+
+.noIndt     { margin-left: 0;}
+.minIndt    { margin-left: 5px;}
+.indtLm1    {margin: 0 10px 0 -5px;} /* Top, Right, Bottom, Left */
+.indtL0p0   { margin: 5px 0 0 0 }
+.indtL0p1   { margin: 5px 0 0 12px }
+.indtL      { margin-left: 24px;}
+.indtL1     { margin-left: 48px;}
+.indtL2     { margin-left: 72px;}
+.indtL3     { margin-left: 96px;}
+.indtL4     { margin-left: 120px;}
+.indtL5     { margin-left: 144px;}
+.indtL6     { margin-left: 168px;}
+
+.noPad      { padding-left: 0px;}   .NoPad      { padding: 0px;}
+.padL0p1    { padding-left: 5px;}   .PadL0p1    { padding: 5px;}
+.padL1      { padding-left: 24px;}  .PadL1      { padding: 24px;}
+
+/* ul.none   { list-style-type: none; } */
+ul.disc     { list-style-type: disc; }
+ul.circle   { list-style-type: circle; }
+ul.square   { list-style-type: square; }
+/* ul.inherit   { list-style-type: inherit; } */
+ol.decimal0 { list-style-type: decimal-leading-zero; }
+ol.decimal  { list-style-type: decimal; }
+ol.l-alpha  { list-style-type: lower-alpha; }
+ol.l-roman  { list-style-type: lower-roman; }
+ol.u-alpha  { list-style-type: upper-alpha; }
+ol.u-latin  { list-style-type: upper-latin; }

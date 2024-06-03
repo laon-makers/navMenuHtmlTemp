@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=100%, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="status.css"/>
+    <link rel="stylesheet" type="text/css" href="share/event_htm.css"/>
+    <link rel="stylesheet" href="share/chart.css">
+    
+    <!-- <script src="..\suntaek.js" type="text/javascript"></script> -->
+    <script src="share/global.js" type="text/javascript"></script>
+    <script src="share/event_htm.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" type="text/javascript"></script>
+    <script src="share/chart.js" type="text/javascript"></script>
+    <script src="status.js" type="text/javascript"></script>
+    <script>
+        //yearMonIx = [24, 4];  //[yy, m] where 'yy', e.g., is '24' for 2024 and 'm' is one among 1 - 31.
+        const iframeElement = document.getElementsByClassName('iframeAutoFit');
+        
+
+        funcRefIframe_status.push(autoFitIframe);
+        funcInHtmlToBePartOfOnLoad_statusJs.push(initChart);  // assign a function to get it invoked by 'window.onload' function.
+
+        funcInHtmlToBeUsedInChartInit.push(() => { window.parent.postMessage({msg: "dashboardFile_req", req: true}, "*"); });
+        // function dbFileReq2 () { 
+        //     window.parent.postMessage({msg: "dashboardFile_req", req: true}, "*"); 
+        // }
+        // funcInHtmlToBeUsedInChartInit.push(dbFileReq2);
+
+        funcInHtmlToBeUsedInChartInit.push(initPrjStatusOnChart);
+    </script>
+    <title>Chart</title>    
+</head>
+<body>    
+    <div class="prj_status">
+        <span class="fb"><b>Hours</b> spent on <b>each project</b></span>&emsp; <i class="fg">(Total Hours: <span id="totHours"></span> hours &rArr; <span id="totDays"></span> work-days)</i>
+        <div id="bar-container">
+            <div id="Dev_h"     class="bar" style="height: 1px;"></div>
+            <!-- <div id="Med_h"     class="bar" style="height: 1px;"></div>
+            <div id="Edu_h"     class="bar" style="height: 1px;"></div>
+            <div id="StdAi_h"   class="bar" style="height: 1px;"></div>
+            <div id="LrnJs_h"   class="bar" style="height: 1px;"></div>
+            <div id="LrnEng_h"  class="bar" style="height: 1px;"></div>
+            <div id="Ytb_h"     class="bar" style="height: 1px;"></div> -->
+            <!-- <div id="Job_h"     class="bar" style="height: 1px;"></div>
+            <div id="Misc_h"    class="bar" style="height: 1px;"></div>
+            <div id="MiscL_h"   class="bar" style="height: 1px;"></div> -->
+        </div><br>
+        <div id="prj-label">
+            <span class="prj_name">발명<br>&nbsp;</span>
+            <!-- <span class="prj_name">명상<br>&nbsp;</span>
+            <span class="prj_name">교육(Tr)</span>
+            <span class="prj_name">학습(AI)</span>
+            <span class="prj_name">학습(JS)</span>
+            <span class="prj_name">학습(Eng)</span>
+            <span class="prj_name">Youtube<br>&nbsp;</span>
+            <span class="prj_name">Job<br>&nbsp;</span> -->
+            <!-- <span class="prj_name">Misc<br>&nbsp;</span>
+            <span class="prj_name">Misc (Lrn)</span> -->
+        </div><br>
+
+        <select id="selYr4Hours" onchange="onChangeOfYear('bar')">
+            <option value="Sel"> -- Choose Year --</option>
+            <option value="All">All</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+            <option value="26">2026</option>
+            <option value="27">2027</option>
+            <option value="28">2028</option>
+            <option value="29">2029</option>
+            <option value="30">2030</option>
+        </select>
+
+        <select id="selMon4Hours" onchange="onChangeOfMonth('bar')">
+            <option value="Sel"> -- Choose Month --</option>
+            <option value="All">All</option>
+            <option  value="01">01</option>
+            <option  value="02">02</option>
+            <option  value="03">03</option>
+            <option  value="04">04</option>
+            <option  value="05">05</option>
+            <option  value="06">06</option>
+            <option  value="07">07</option>
+            <option  value="08">08</option>
+            <option  value="09">09</option>
+            <option  value="11">11</option>
+            <option  value="12">12</option>
+        </select><br><br> 
+
+        <input type="checkbox" id="setThisMon4Bar" name="setThisMonth4Bar" onchange="setThisMon_ifChecked(event, 'bar')" checked>
+        <label for="setThisMon4Bar"><i>Set This Month</i></label>&emsp;
+        <!-- <button type="button" onclick="postMsgCmd_deferred('db_2024/dashb_2404.htm', ['Dev_h', 'Med_h', 'StdAi_h', 'Ytb_h', 'Job_h', 'Misc_h', 'LrnJs_h'])">Update Hour</button> -->
+        <!-- <button type="button" onclick="clearHourSubTotal_n_PostMsgCmd_deferred('db_2024/dashb_2405.htm', 'LrnJs_h')">Update Hour</button> -->
+        <button type="button" onclick="updateProjectHours_Req('bar')"><span class="fb">Update Hour</span></button>&emsp;&emsp;&emsp;
+        <!-- &emsp;<button type="button" onclick="updateProjectTotalHours_Req('bar')">Update Total Hours</button> -->
+        
+    </div>
+
+
+
+
+
+    <div class="prj_status">
+        <span class="fb"><b>%</b> of hours spent on <b>each project</b></span><br><br><br><br>
+
+        <canvas id="prjPercentChart" style="min-width: 500px; max-width: 700px;"></canvas><br>
+
+        <select id="selYr4Percent" onchange="onChangeOfYear('doughnut')">
+            <option value="Sel"> -- Choose Year --</option>
+            <option value="All">All</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+            <option value="26">2026</option>
+            <option value="27">2027</option>
+            <option value="28">2028</option>
+            <option value="29">2029</option>
+            <option value="30">2030</option>
+        </select>
+
+        <select id="selMon4Percent" onchange="onChangeOfMonth('doughnut')">
+            <option value="Sel"> -- Choose Month --</option>
+            <option value="All">All</option>
+            <option  value="01">01</option>
+            <option  value="02">02</option>
+            <option  value="03">03</option>
+            <option  value="04">04</option>
+            <option  value="05">05</option>
+            <option  value="06">06</option>
+            <option  value="07">07</option>
+            <option  value="08">08</option>
+            <option  value="09">09</option>
+            <option  value="11">11</option>
+            <option  value="12">12</option>
+        </select><br><br>
+
+        <input type="checkbox" id="setThisMon4Dn" name="setThisMonth4Doughnut" onchange="setThisMon_ifChecked(event, 'doughnut')" checked>
+        <label for="setThisMon4Dn"><i>Set This Month</i></label>&emsp;
+        <button type="button" onclick="updateProjectHours_Req('doughnut')"><span class="fb">Update Percentage</span></button>&emsp;
+
+        <br><br><br><br>
+        <br><br>
+        
+        <script>
+            // var prjPercentChart;
+            const prjCtx = document.getElementById('prjPercentChart').getContext('2d');
+            
+            function initPrjPercentChart() {
+                prjPercentChart = new Chart(prjCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: prjName, //['발명', '명상', '교육', 'Youtube', 'Misc', 'Misc (Lrn)'],  // The variable 'prjName' is passed as a reference; risk of value changes..
+                        datasets: [{
+                            data: [], //[5, 30, 20, 10, 15, 10, 10], // if you use a global variable for this 'data', the variable is passed as a reference; risk of value changes.  
+                            backgroundColor:prjChartColors, //['red', 'green', 'blue', 'orange', 'brown', 'purple', '#3498db'], // if you use a global variable for this 'data', the variable is passed as a reference; risk of value changes.  
+                        }],
+                    },
+                    options: {
+                        title: {
+                            display: false,
+                            text: 'Task Distribution',
+                        },
+                        legend: {position:'bottom'},
+                    },
+                });
+
+                for(let i = 0; i < prjName.length; i++) {
+                    prjPercentChart.config.data.datasets[0].backgroundColor.push(prjChartColors[i]);
+                    prjPercentChart.config.data.datasets[0].data.push(0);
+                    // prjPercentChart.config.data.labels.push(prjName[i]);
+                }
+
+                document.getElementById('selYr4Percent').selectedIndex = document.getElementById('selYr4Hours').selectedIndex;
+                document.getElementById('selMon4Percent').selectedIndex = document.getElementById('selMon4Hours').selectedIndex;
+            }
+            
+            funcInHtmlToBeUsedInChartInit.push(initPrjPercentChart);
+        </script>
+    </div>
+
+
+
+
+
+    <div class="prj_status">
+        <span class="fb"><b>% of hours</b> spent on each sub-project within a <b>selected project</b></span><br><br><br><br>
+
+        <canvas id="eachPrjPercentChart" style="min-width: 500px; max-width: 700px;"></canvas><br>
+
+        <p id="workHours">Work Hours: <b style='color: red;'>0</b> hours</p><br>
+        
+        From: 
+        <select id="selYr4EachPercent_I">
+            <option value="Sel"> - Year -</option>
+            <option value="All">All</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+            <option value="26">2026</option>
+            <option value="27">2027</option>
+            <option value="28">2028</option>
+            <option value="29">2029</option>
+            <option value="30">2030</option>
+        </select>
+        <select id="selMon4EachPercent_I">
+            <option value="Sel"> - Month -</option>
+            <option value="All">All</option>
+            <option  value="01">01</option>
+            <option  value="02">02</option>
+            <option  value="03">03</option>
+            <option  value="04">04</option>
+            <option  value="05">05</option>
+            <option  value="06">06</option>
+            <option  value="07">07</option>
+            <option  value="08">08</option>
+            <option  value="09">09</option>
+            <option  value="11">11</option>
+            <option  value="12">12</option>
+        </select>
+        <select id="selDay4EachPercent_I">
+            <option value="Sel"> - Day -</option>
+            <option value="All">All</option>
+            <option  value="01">01</option>
+            <option  value="02">02</option>
+            <option  value="03">03</option>
+            <option  value="04">04</option>
+            <option  value="05">05</option>
+            <option  value="06">06</option>
+            <option  value="07">07</option>
+            <option  value="08">08</option>
+            <option  value="09">09</option>
+            <option  value="11">11</option>
+            <option  value="12">12</option>
+        </select><br>
+        To: &ensp;&nbsp;&nbsp; 
+        <select id="selYr4EachPercent_II">
+            <option value="Sel"> - Year -</option>
+            <option value="All">All</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+            <option value="26">2026</option>
+            <option value="27">2027</option>
+            <option value="28">2028</option>
+            <option value="29">2029</option>
+            <option value="30">2030</option>
+        </select>
+        <select id="selMon4EachPercent_II">
+            <option value="Sel"> - Month -</option>
+            <option value="All">All</option>
+            <option  value="01">01</option>
+            <option  value="02">02</option>
+            <option  value="03">03</option>
+            <option  value="04">04</option>
+            <option  value="05">05</option>
+            <option  value="06">06</option>
+            <option  value="07">07</option>
+            <option  value="08">08</option>
+            <option  value="09">09</option>
+            <option  value="11">11</option>
+            <option  value="12">12</option>
+        </select>
+        <select id="selDay4EachPercent_II">
+            <option value="Sel"> - Day -</option>
+            <option value="All">All</option>
+            <option  value="01">01</option>
+            <option  value="02">02</option>
+            <option  value="03">03</option>
+            <option  value="04">04</option>
+            <option  value="05">05</option>
+            <option  value="06">06</option>
+            <option  value="07">07</option>
+            <option  value="08">08</option>
+            <option  value="09">09</option>
+            <option  value="11">11</option>
+            <option  value="12">12</option>
+        </select><br><br>
+        <!-- <select id="selWType">
+            <option> -- Choose Work Type --</option>
+            <option>Design</option>
+            <option>Development</option>
+            <option>Test &amp; Debug</option>
+            <option>Change Request</option>
+            <option>Customer Service</option>
+        </select> -->
+        <select id="selPrj4EachPercent_I">
+            <option value="Sel"> - Choose Project -</option>
+            <option value="Dev_h"  >발명</option>
+            <option value="Med_h"  >명상</option>
+            <option value="StdAi_h"  >교육(AI)</option>
+            <option value="Ytb_h"  >Youtube</option>
+            <option value="Job_h"  >Job</option>
+            <option value="Misc_h" >Misc</option>
+            <option value="LrnJs_h">Misc (Dev)</option>
+            <option>Tbd</option>
+            <option>tbd</option>
+        </select>
+        <input id='newProgress' type='text' style="width:3em" />
+        <button type="button" onclick="updateProgress()">Update Progress</button><br><br>
+
+
+        <script>
+            // var eachPrjPercentChart;
+            const eachPrjCtx = document.getElementById('eachPrjPercentChart').getContext('2d');
+            function initEachPrjPercentChart() {
+                eachPrjPercentChart = new Chart(eachPrjCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: ['발명', '명상', '교육', 'Youtube', 'Misc', 'Misc (Lrn)'],
+                        datasets: [{
+                            data: [5, 30, 20, 10, 15, 10, 10], // Adjust based on your data
+                            backgroundColor: ['red', 'green', 'blue', 'orange', 'brown', 'purple', '#3498db'], // Colors for segments
+                        }],
+                    },
+                    options: {
+                        title: {
+                            display: false,
+                            text: 'Task Distribution',
+                        },                    
+                        legend: {position:'bottom'},
+                    },
+                });
+
+
+            //     for(let i = 0; i < prjName.length; i++) {
+            //         eachPrjPercentChart.config.data.datasets[0].backgroundColor.push(prjChartColors[i]);
+            //         eachPrjPercentChart.config.data.datasets[0].data.push(0);
+            //         eachPrjPercentChart.config.data.labels.push(prjName[i]);
+            //     }
+            }
+
+            funcInHtmlToBeUsedInChartInit.push(initEachPrjPercentChart);
+            
+            funcInHtmlToBeUsedInChartInit.push(() => { resetProjectHours(prj_IDs); });
+            // function resetPrjHoursReq2() { resetProjectHours(prj_IDs); }
+            // funcInHtmlToBeUsedInChartInit.push(resetPrjHoursReq2);
+        </script>
+    </div><br><br>
+
+    <div id="dbgMsg" class="fR">&nbsp;</div>
+    <div hidden>
+        <iframe id="if4Chart" src="#"></iframe>
+    </div>
+</body>
+</html>
